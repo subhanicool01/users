@@ -6,9 +6,9 @@ ARG JAR_SOURCE
 ENV JAR_SOURCE ${JAR_SOURCE}
 ARG JAR_DEST
 ENV JAR_DEST ${JAR_DEST}
-RUN mkdir -p /opt/i27/
-WORKDIR /opt/i27/
-COPY ["${JAR_SOURCE}", "/opt/i27/i27cart-user.jar"]
-RUN chmod 777 /opt/i27/
+RUN mkdir -p /opt/user/
+WORKDIR /opt/user/
+COPY ["${JAR_SOURCE}", "/opt/i27/user.jar"]
+RUN chmod 777 /opt/user/
 EXPOSE 8232
-CMD ["java", "-jar", "/opt/i27/i27cart-user.jar"]
+CMD ["java", "-jar", "/opt/i27/user.jar"]
