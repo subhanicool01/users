@@ -7,7 +7,7 @@ ENV JAR_SOURCE ${JAR_SOURCE}
 ARG JAR_DEST
 ENV JAR_DEST ${JAR_DEST}
 RUN mkdir -p /opt/user/
-WORKDIR /opt/user
+WORKDIR /opt/user/
 COPY ["${JAR_SOURCE}", "/opt/user/user.jar"]
 RUN chmod 777 /opt/user/
 EXPOSE 5736
