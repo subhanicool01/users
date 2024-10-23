@@ -37,7 +37,7 @@ pipeline {
         DOCKER_CREDS = credentials('subhanicool01_docker_creds')
         SONAR_URL = "http://34.68.126.198:9000"
         SONAR_TOKEN = credentials('sonar_creds')
-        PUBLIC_IP = "35.193.39.253"
+        PUBLIC_IP = "35.224.106.150"
     }
     tools {
         maven 'Maven-3.8.8'
