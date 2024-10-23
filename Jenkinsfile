@@ -109,7 +109,7 @@ pipeline {
             steps {
                 script {
                     imageValidation().call()
-                    Dockerdeploy('dev', '6232').call()
+                    Dockerdeploy('dev', '3736').call()
                 }
             }
         }
@@ -122,7 +122,7 @@ pipeline {
             steps {
                 script {
                     imageValidation().call()
-                    Dockerdeploy('stage', '7232').call()
+                    Dockerdeploy('stage', '4736').call()
                 }
             }
         }
@@ -145,7 +145,7 @@ pipeline {
                 }
                 script {
                     imageValidation().call()
-                    Dockerdeploy('Prod', '8232').call()
+                    Dockerdeploy('Prod', '5736').call()
                 }
             }
         }
@@ -222,7 +222,7 @@ def Dockerdeploy(env_Name, host_Port) {
                 }
                 // docker create a conatainer
                    echo "creating a new-container"
-                   sh "sshpass -p ${PASSWORD} -v ssh -o StrictHostKeyChecking=no ${USERNAME}@${env.PUBLIC_IP} docker run -d -p $host_Port:8232 --name ${env.SERVICE_NAME}-$env_Name ${env.DOCKER_HUB}/${env.SERVICE_NAME}:${GIT_COMMIT}"
+                   sh "sshpass -p ${PASSWORD} -v ssh -o StrictHostKeyChecking=no ${USERNAME}@${env.PUBLIC_IP} docker run -d -p $host_Port:5736 --name ${env.SERVICE_NAME}-$env_Name ${env.DOCKER_HUB}/${env.SERVICE_NAME}:${GIT_COMMIT}"
 
 
             } 
