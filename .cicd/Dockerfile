@@ -10,5 +10,5 @@ RUN mkdir -p /opt/user/
 WORKDIR /opt/user/
 COPY ["${JAR_SOURCE}", "/opt/user/user.jar"]
 RUN chmod 777 /opt/user/
-EXPOSE 8232
+EXPOSE 5736
 CMD ["java", "-jar", "/opt/user/user.jar"]
