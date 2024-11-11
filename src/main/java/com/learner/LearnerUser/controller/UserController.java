@@ -35,7 +35,7 @@ public class UserController {
     }
 
     // get user by email and password
-    
+    @CrossOrigin(origins = "http://34.41.246.17")
     @GetMapping("/getDetails")
     public UserByEmail getUserById(@RequestParam String email, String password) {
         User existingUser = userRepository.findByEmailAndPassword(email, password);
