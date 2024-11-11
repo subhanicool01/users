@@ -24,7 +24,7 @@ public class UserController {
         return this.userRepository.findAll();
     }
 
-    @CrossOrigin(origins = "*")
+    //@CrossOrigin(origins = "*")
     @GetMapping("/getUserById")
     public User getUserByUserId(@RequestParam long userId, HttpServletResponse response) {
         User user = this.userRepository.findById(userId);
