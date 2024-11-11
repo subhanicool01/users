@@ -18,7 +18,7 @@ public class UserController {
     private UserRepository userRepository;
 
     // get all users
-    
+    @CrossOrigin(origins = "*")
     @GetMapping
     public List<User> getAllUsers() {
         return this.userRepository.findAll();
