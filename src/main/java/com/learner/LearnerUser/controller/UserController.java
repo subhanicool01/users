@@ -18,7 +18,7 @@ public class UserController {
     private UserRepository userRepository;
 
     // get all users
-    @CrossOrigin(origins = "*")
+    //@CrossOrigin(origins = "*")
     @GetMapping
     public List<User> getAllUsers() {
         return this.userRepository.findAll();
@@ -52,7 +52,7 @@ public class UserController {
 
 
     // create user
-    @CrossOrigin(origins = "*")
+    //@CrossOrigin(origins = "*")
     @PostMapping
     public User createUser(@RequestBody User user) {
         User existingUser = userRepository.findByEmail(user.getEmail());
