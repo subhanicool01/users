@@ -18,13 +18,13 @@ public class UserController {
     private UserRepository userRepository;
 
     // get all users
-    //@CrossOrigin(origins = "*")
+    @CrossOrigin(origins = "http://34.41.246.17")
     @GetMapping
     public List<User> getAllUsers() {
         return this.userRepository.findAll();
     }
 
-    //@CrossOrigin(origins = "*")
+    @CrossOrigin(origins = "http://34.41.246.17")
     @GetMapping("/getUserById")
     public User getUserByUserId(@RequestParam long userId, HttpServletResponse response) {
         User user = this.userRepository.findById(userId);
@@ -52,7 +52,7 @@ public class UserController {
 
 
     // create user
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = "http://34.41.246.17")
     @PostMapping
     public User createUser(@RequestBody User user) {
         User existingUser = userRepository.findByEmail(user.getEmail());
