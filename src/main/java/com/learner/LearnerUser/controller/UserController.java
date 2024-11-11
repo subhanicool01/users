@@ -18,7 +18,7 @@ public class UserController {
     private UserRepository userRepository;
 
     // get all users
-    @CrossOrigin(origins = "*")
+    
     @GetMapping
     public List<User> getAllUsers() {
         return this.userRepository.findAll();
@@ -35,7 +35,7 @@ public class UserController {
     }
 
     // get user by email and password
-    @CrossOrigin(origins = "*")
+    
     @GetMapping("/getDetails")
     public UserByEmail getUserById(@RequestParam String email, String password) {
         User existingUser = userRepository.findByEmailAndPassword(email, password);
