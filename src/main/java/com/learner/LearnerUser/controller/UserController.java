@@ -52,7 +52,7 @@ public class UserController {
 
 
     // create user
-    //@CrossOrigin(origins = "*")
+    @CrossOrigin(origins = "*")
     @PostMapping
     public User createUser(@RequestBody User user) {
         User existingUser = userRepository.findByEmail(user.getEmail());
