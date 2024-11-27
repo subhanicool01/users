@@ -14,4 +14,12 @@ spec:
     spec:
       containers:
       - name: user-service
+      # below image should be changed based on the code was changed
         image: 
+        resources:
+           requests:
+             memory: "125Mi"
+             cpu: "250m"
+            limits:
+              memory: "250Mi"
+              cpu: "500m"
