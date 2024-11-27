@@ -23,3 +23,21 @@ spec:
             limits:
               memory: "250Mi"
               cpu: "500m"
+----
+# service
+apiVersion: v1
+kind: Service
+metadata:
+  name: user-service-svc
+spec:
+  selector:
+    name: user-service
+  ports:
+  - protocol: TCP
+    port: 80 #container port
+    targetPort: 8761 #service port
+  type: NodePort
+
+
+
+              
